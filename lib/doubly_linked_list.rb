@@ -28,12 +28,28 @@ class DoublyLinkedList
         while list.next_node != nil do 
             result[number] = list.node 
 
-            number += 1 
             list = list.next_node
+            number += 1 
         end 
 
         result[number] = @tail.node
         
         result 
     end 
+
+    def data_at_position(position)
+        tracker = 1 
+        data = nil 
+
+        list = @head
+
+        while tracker <= position do
+            if tracker == position 
+                return list.node 
+            end 
+
+            list = list.next_node
+            tracker += 1
+        end  
+    end
 end 
