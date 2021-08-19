@@ -52,4 +52,19 @@ class DoublyLinkedList
             tracker += 1
         end  
     end
+
+    def change_node_data(data, position)
+        tracker = 1  
+
+        list = @head
+
+        while tracker <= position do
+            if tracker == position 
+                list.node = data 
+            end 
+
+            list = list.next_node
+            tracker += 1
+        end  
+    end
 end 

@@ -71,11 +71,25 @@ describe 'doubly linked list' do
 
         dll.add_node_to_tail(ln_1)
         dll.add_node_to_tail(ln_2)
-        dll.add_node_to_tail(ln_3)
-
-        # binding.pry 
+        dll.add_node_to_tail(ln_3) 
 
         expect(dll.data_at_position(2)).to eq('Fulvous Whistling-Duck')
         expect(dll.data_at_position(3)).to eq('Snow Goose')
+    end 
+
+    it 'can change the data in a node at a specific position in the doubly linked list' do 
+        ln_1 = ListNode.new('Black-bellied Whistling-Duck')
+        ln_2 = ListNode.new('Fulvous Whistling-Duck')
+        ln_3 = ListNode.new('Snow Goose')
+
+        dll = DoublyLinkedList.new
+
+        dll.add_node_to_tail(ln_1)
+        dll.add_node_to_tail(ln_2)
+        dll.add_node_to_tail(ln_3) 
+
+        dll.change_node_data("Ross's Goose", 2)
+
+        expect(dll.data_at_position(2)).to eq("Ross's Goose")
     end 
 end 
