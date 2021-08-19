@@ -17,14 +17,23 @@ class DoublyLinkedList
             @tail.next_node = node 
             @tail = node  
         end 
-
-        # linked_list = @head 
-
-        # while linked_list.next_node != nil do 
-        #     # binding.pry 
-        #     linked_list = linked_list.next_node
-        # end 
-
-        # linked_list.next_node = node 
     end
+
+    def retrieve_list_data_as_hash
+        result = {}
+        number = 1 
+        
+        list = @head
+
+        while list.next_node != nil do 
+            result[number] = list.node 
+
+            number += 1 
+            list = list.next_node
+        end 
+
+        result[number] = @tail.node
+        
+        result 
+    end 
 end 
