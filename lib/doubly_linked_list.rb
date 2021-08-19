@@ -56,7 +56,7 @@ class DoublyLinkedList
     def change_node_data(data, position)
         tracker = 1  
 
-        list = @head
+        list = @head 
 
         while tracker <= position do
             if tracker == position 
@@ -66,5 +66,25 @@ class DoublyLinkedList
             list = list.next_node
             tracker += 1
         end  
+    end
+
+    def number_of_nodes
+        total = 0 
+
+        if @head.nil? 
+            return 0 
+        else 
+            list = @head
+        end 
+
+        while list.next_node != nil do
+
+            list = list.next_node
+            total += 1
+        end 
+
+        if total > 0
+            total += 1
+        end 
     end
 end 

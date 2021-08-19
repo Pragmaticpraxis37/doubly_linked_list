@@ -92,4 +92,26 @@ describe 'doubly linked list' do
 
         expect(dll.data_at_position(2)).to eq("Ross's Goose")
     end 
+
+    it 'can return the total number of nodes in the list' do 
+        ln_1 = ListNode.new('Black-bellied Whistling-Duck')
+        ln_2 = ListNode.new('Fulvous Whistling-Duck')
+        ln_3 = ListNode.new('Snow Goose')
+
+        dll = DoublyLinkedList.new
+
+        dll.add_node_to_tail(ln_1)
+        dll.add_node_to_tail(ln_2)
+        dll.add_node_to_tail(ln_3) 
+
+        expect(dll.number_of_nodes).to eq(3)
+    end 
+
+    it 'can return the total number of nodes at zero if the doubly linked list is empty' do 
+
+
+        dll = DoublyLinkedList.new
+
+        expect(dll.number_of_nodes).to eq(0)
+    end 
 end 
